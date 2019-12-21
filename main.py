@@ -5,6 +5,9 @@ from discord.voice_client import VoiceClient
 import episodes
 import asyncio
 
+if not discord.opus.is_loaded():
+    discord.opus.load_opus('libopus.so')
+    
 token = envvars.BOT_TOKEN
 bot = commands.Bot(command_prefix = '>')
 
